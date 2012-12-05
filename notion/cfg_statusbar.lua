@@ -37,7 +37,7 @@ mod_statusbar.create{
     -- windows and icons.
     --
     --template="[ %date || load: %load ] %filler%systray",
-    template="[ %date || Kiev: %exec_kievtime || LA: %exec_latime || load: %load ] %filler%systray",
+    template="[ %date || Peter: %exec_petertime || LA: %exec_latime || load: %load ] %filler%systray",
     --template="[ %date || load: %load ] %filler%laptopstatus_batterypercent%systray",
     --template="[ %date || load: %load ] %filler %apm_pct %systray",
     --template="[ %date - %pmu_battery || load: %load ] %filler%systray",
@@ -51,8 +51,8 @@ mod_statusbar.create{
 -- for necessary statusd modules to be parsed from the templates.
 mod_statusbar.launch_statusd{
      exec = {
-        kievtime = {
-            program = "zdump EET | awk '{print $5}' | head -c 5",
+        petertime = {
+            program = "zdump Europe/Moscow | awk '{print $5}' | head -c 5",
             retry_delay = 20 * 1000,
             meter_length = 4,
         },
@@ -66,7 +66,7 @@ mod_statusbar.launch_statusd{
     date={
         -- ISO-8601 date format with additional abbreviated day name
         --date_format='%a %Y-%m-%d %H:%M',
-        date_format='%a %Y-%m-%d %H:%M',
+        date_format='%a %Y-%m-%d',
         -- Finnish etc. date format
         --date_format='%a %d.%m.%Y %H:%M',
         -- Locale date format (usually shows seconds, which would require

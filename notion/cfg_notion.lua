@@ -98,5 +98,5 @@ dopath("cfg_defaults")
 --defbindings("WMPlex.toplevel", {
 --    kpress(META.."M", "mod_menu.menu(_, _sub, 'ctxmenu')"),
 --})
-dopath("look_atme")
+--dopath("look_atme")
 

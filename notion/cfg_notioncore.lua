@@ -67,7 +67,7 @@ defbindings("WScreen", {
     kpress(META.."F8", "ioncore.create_ws(_)"),
     
     bdoc("Display the main menu."),
-    kpress(ALTMETA.."F12", "mod_query.query_menu(_, _sub, 'mainmenu', 'Main menu:')"),
+    kpress(META.."F12", "mod_query.query_menu(_, _sub, 'mainmenu', 'Main menu:')"),
     --kpress(ALTMETA.."F12", "mod_menu.menu(_, _sub, 'mainmenu', {big=true})"),
     mpress("Button3", "mod_menu.pmenu(_, _sub, 'mainmenu')"),
     
@@ -138,23 +138,23 @@ defbindings("WMPlex.toplevel", {
     bdoc("Toggle tag of current object."),
     kpress(META.."T", "WRegion.set_tagged(_sub, 'toggle')", "_sub:non-nil"),
 
-    bdoc("Query for manual page to be displayed."),
-    kpress(ALTMETA.."F1", "mod_query.query_man(_, ':man')"),
+    --bdoc("Query for manual page to be displayed."),
+    --kpress(ALTMETA.."F1", "mod_query.query_man(_, ':man')"),
 
-    bdoc("Show the Notion manual page."),
-    kpress(META.."F1", "ioncore.exec_on(_, ':man notion')"),
+    --bdoc("Show the Notion manual page."),
+    --kpress(META.."F1", "ioncore.exec_on(_, ':man notion')"),
 
     bdoc("Run a terminal emulator."),
-    kpress(ALTMETA.."F2", "ioncore.exec_on(_, XTERM or 'xterm')"),
+    kpress(META.."F4", "ioncore.exec_on(_, XTERM or 'xterm')"),
     
     bdoc("Query for command line to execute."),
     kpress(ALTMETA.."F3", "mod_query.query_exec(_)"),
 
-    bdoc("Query for Lua code to execute."),
-    kpress(META.."F3", "mod_query.query_lua(_)"),
+    --bdoc("Query for Lua code to execute."),
+    --kpress(META.."F3", "mod_query.query_lua(_)"),
 
-    bdoc("Query for host to connect to with SSH."),
-    kpress(ALTMETA.."F4", "mod_query.query_ssh(_, ':ssh')"),
+    --bdoc("Query for host to connect to with SSH."),
+    --kpress(ALTMETA.."F4", "mod_query.query_ssh(_, ':ssh')"),
 
     --bdoc("Query for file to edit."),
     --kpress(ALTMETA.."F5", 
