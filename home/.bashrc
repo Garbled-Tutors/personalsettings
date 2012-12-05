@@ -112,4 +112,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+alias gad='git add'
+alias gl='git log'
+alias gst='git status'
+alias gcm='git commit -m'
 [[ $TERM != "screen" ]] && exec tmux
