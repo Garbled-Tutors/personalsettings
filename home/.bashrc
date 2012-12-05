@@ -116,4 +116,12 @@ alias gad='git add'
 alias gl='git log'
 alias gst='git status'
 alias gcm='git commit -m'
-[[ $TERM != "screen" ]] && exec tmux
+#[[ $TERM != "screen" ]] && exec tmux
+# If not running interactively, do not do anything
+#[[ $- != *i* ]] && return
+#[[ $TERM != screen* ]] && exec tmux
+# TMUX
+if which tmux 2>&1 >/dev/null; then
+    #if not inside a tmux session, and if no session is started, start a new session
+    test -z "$TMUX" && (tmux attach || tmux new-session)
+fi
