@@ -1,0 +1,7 @@
+[user]
+	name = John Smith
+	email = private@unknown.com
+[core]
+	editor = vim
+[color]
+	ui = true
