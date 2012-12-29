@@ -161,8 +161,8 @@ defbindings("WMPlex.toplevel", {
     --       "mod_query.query_editfile(_, 'run-mailcap --action=edit')"),
 
     bdoc("Query for file to view."),
-    kpress(ALTMETA.."F6", 
-           "mod_query.query_runfile(_, 'run-mailcap --action=view')"),
+    --kpress(ALTMETA.."F6", 
+           --"mod_query.query_runfile(_, 'run-mailcap --action=view')"),
 
     bdoc("Query for workspace to go to or create a new one."),
     kpress(ALTMETA.."F8", "mod_query.query_workspace(_)"),

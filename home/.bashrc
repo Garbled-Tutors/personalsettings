@@ -116,6 +116,7 @@ alias gad='git add'
 alias gl='git log'
 alias gst='git status'
 alias gcm='git commit -m'
+alias ls="ls --color"
 #[[ $TERM != "screen" ]] && exec tmux
 # If not running interactively, do not do anything
 #[[ $- != *i* ]] && return
@@ -125,3 +126,6 @@ if which tmux 2>&1 >/dev/null; then
     #if not inside a tmux session, and if no session is started, start a new session
     test -z "$TMUX" && (tmux attach || tmux new-session)
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source ~/.rvm/scripts/rvm
