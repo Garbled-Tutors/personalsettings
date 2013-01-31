@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# for exampler
 
 # If not running interactively, don't do anything
 case $- in
@@ -56,8 +56,10 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+color_prompt=yes
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[10;30m\]\u@\h\[\033[00m\]:\[\033[10;31m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -122,10 +124,14 @@ alias ls="ls --color"
 #[[ $- != *i* ]] && return
 #[[ $TERM != screen* ]] && exec tmux
 # TMUX
+
+#[[ $TERM != screen* ]] && export TERM=xterm-color
+[[ $TERM != screen* ]] && export TERM=xterm-color
+
+startup.sh
 if which tmux 2>&1 >/dev/null; then
     #if not inside a tmux session, and if no session is started, start a new session
-    test -z "$TMUX" && (tmux attach || tmux new-session)
+    test -z "$TMUX" && (tmux attach || tmux -2 new-session)
 fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source ~/.rvm/scripts/rvm
